@@ -1,0 +1,7 @@
+*        text=auto
+
+*.cs     text diff=csharp
+*.html   text diff=html
+
+*.vcproj    text eol=crlf
+*.sh        text eol=lf
