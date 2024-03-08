@@ -1,6 +1,6 @@
 namespace Safepay;
 
-internal class ApiBase
+internal class SafepayApiBase
 {
     public const string Production = "https://api.getsafepay.com";
 

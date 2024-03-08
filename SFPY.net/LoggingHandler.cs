@@ -1,4 +1,4 @@
-﻿namespace Safepay.net;
+﻿namespace Safepay;
 
 public class LoggingHandler : DelegatingHandler
 {

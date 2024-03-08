@@ -1,4 +1,4 @@
-# Safepay.net
+# SFPY.net
 
 The official [Safepay][safepay] .NET library, supporting .NET Standard 8.0.2+.
 
@@ -8,7 +8,6 @@ The official [Safepay][safepay] .NET library, supporting .NET Standard 8.0.2+.
 
 ```
 using Safepay;
-using Safepay.net;
 ```
 
 ### Configuration

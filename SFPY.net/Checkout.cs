@@ -1,4 +1,4 @@
-﻿namespace Safepay.net;
+﻿namespace Safepay;
 
 public static class Checkout
 {
@@ -24,11 +24,11 @@ public static class Checkout
     string checkoutBase = CheckoutBase.Production;
     switch (SafepayConfiguration.Environment)
     {
-      case Environment.Development:
+      case SafepayEnvironment.Development:
         checkoutBase = CheckoutBase.Development;
         break;
 
-      case Environment.Sandbox:
+      case SafepayEnvironment.Sandbox:
         checkoutBase = CheckoutBase.Sandbox;
         break;
     }

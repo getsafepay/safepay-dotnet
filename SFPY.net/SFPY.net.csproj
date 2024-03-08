@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <Description>Safepay.net is a class library for the Safepay API.  (Official Library)</Description>
+    <Description>SFPY.net is a class library for the Safepay API.  (Official Library)</Description>
     <Version>1.0.0</Version>
     <TargetFramework>net8.0</TargetFramework>
     <Authors>Safepay, Hassan Zaidi</Authors>

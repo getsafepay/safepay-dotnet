@@ -1,5 +1,4 @@
-﻿using Safepay.net;
-using System.Net.Http.Headers;
+﻿using System.Net.Http.Headers;
 
 namespace Safepay;
 

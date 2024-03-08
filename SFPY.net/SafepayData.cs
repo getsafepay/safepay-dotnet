@@ -1,7 +1,7 @@
 ﻿using System.Text.Json;
 using System.Text.Json.Serialization;
 
-namespace Safepay.net;
+namespace Safepay;
 
 public class SafepayData
 {

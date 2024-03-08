@@ -1,6 +1,6 @@
 ﻿namespace Safepay;
 
-/// <summary> Global configuration class for Safepay settings </summary>
+/// <summary> Global configuration class for Safe settings </summary>
 public static class SafepayConfiguration
 {
   private static string apiKey;
@@ -32,7 +32,7 @@ public static class SafepayConfiguration
     {
         if (string.IsNullOrEmpty(environment))
         {
-          return Safepay.Environment.Production;
+          return SafepayEnvironment.Production;
         }
 
         return environment;
@@ -43,9 +43,9 @@ public static class SafepayConfiguration
         string env = value.ToLower();
         switch (env)
         {
-          case Safepay.Environment.Development:
-          case Safepay.Environment.Sandbox:
-          case Safepay.Environment.Production:
+          case SafepayEnvironment.Development:
+          case SafepayEnvironment.Sandbox:
+          case SafepayEnvironment.Production:
             environment = env;
             break;
         }
@@ -61,17 +61,17 @@ public static class SafepayConfiguration
         {
           switch (Environment)
           {
-            case Safepay.Environment.Development:
-              return Safepay.ApiBase.Development;
+            case SafepayEnvironment.Development:
+              return SafepayApiBase.Development;
 
-            case Safepay.Environment.Sandbox:
-              return Safepay.ApiBase.Sandbox;
+            case SafepayEnvironment.Sandbox:
+              return SafepayApiBase.Sandbox;
 
-            case Safepay.Environment.Production:
-              return Safepay.ApiBase.Production;
+            case SafepayEnvironment.Production:
+              return SafepayApiBase.Production;
 
             default:
-              return Safepay.ApiBase.Production;
+              return SafepayApiBase.Production;
           }
         }
 

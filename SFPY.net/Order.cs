@@ -1,6 +1,6 @@
 ﻿using System.Net.Http.Json;
 
-namespace Safepay.net;
+namespace Safepay;
 
 public class Order
 {

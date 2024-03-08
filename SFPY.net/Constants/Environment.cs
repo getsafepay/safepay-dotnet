@@ -1,6 +1,6 @@
 namespace Safepay;
 
-internal class Environment
+internal class SafepayEnvironment
 {
     public const string Production = "production";
 
