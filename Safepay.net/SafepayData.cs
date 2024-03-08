@@ -51,8 +51,3 @@ public class SafepayData
     return JsonSerializer.Serialize(this, prettify);
   }
 }
-
-// TODO
-  // "transaction": null,
-  // "dynamic_currency_conversion": null,
-  // "metadata": null,

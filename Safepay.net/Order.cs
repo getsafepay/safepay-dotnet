@@ -4,6 +4,14 @@ namespace Safepay.net;
 
 public class Order
 {
+  /// <summary>
+  /// Creates a new Tracker. A Tracker may be loaded into a Checkout session to capture a payment from a customer.
+  /// </summary>
+  /// 
+  /// <param name="amount"> The order total. </param>
+  /// <param name="currency" The base price currency. Three-letter ISO currency code, in uppercase. </param>
+  /// 
+  /// <returns></returns>
   public async Task<SafepayResponse> CreateTracker(double amount, string currency)
   {
     string url = $"{SafepayConfiguration.ApiBase}{Resources.Order}{Paths.OrderInit}";
