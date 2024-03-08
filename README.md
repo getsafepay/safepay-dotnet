@@ -4,6 +4,14 @@ The official [Safepay][safepay] .NET library, supporting .NET Standard 8.0.2+.
 
 ## Usage
 
+### Installation
+
+Using the [.NET Core command-line interface (CLI) tools][dotnet-core-cli-tools]:
+
+```
+dotnet add package SFPY.net
+```
+
 ### Imports
 
 ```
@@ -81,4 +89,16 @@ request.Headers.Add("X-SFPY-SIGNATURE", "ed3b0a78fef22b658e0734a4d9072d148a2cc53
 bool isValid = Verification.VerifyWebhook(request);
 ```
 
+## Support
+
+New features and bug fixes are released on the latest major version of the Safepay .NET client library. If you are on an older major version, we recommend that you upgrade to the latest in order to use the new features and bug fixes including those for security vulnerabilities. Older major versions of the package will continue to be available for use, but will not be receiving any updates.
+
+## Development
+
+For any requests, bug or comments, please [open an issue][issues] or [submit a
+pull request][pulls].
+
 [safepay]: https://getsafepay.com
+[issues]: https://github.com/getsafepay/safepay-dotnet/issues/new
+[pulls]: https://github.com/getsafepay/safepay-dotnet/pulls
+[dotnet-core-cli-tools]: https://docs.microsoft.com/en-us/dotnet/core/tools/
