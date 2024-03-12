@@ -1,6 +1,7 @@
-﻿namespace Safepay;
-
-public class Paths
+﻿namespace Safepay
 {
-  public const string OrderInit = "/v1/init";
+  public class Paths
+  {
+    public const string OrderInit = "/v1/init";
+  }
 }

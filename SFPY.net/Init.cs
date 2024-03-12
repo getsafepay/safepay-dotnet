@@ -1,12 +1,20 @@
-﻿namespace Safepay;
+﻿using System.Text.Json.Serialization;
 
-public class Init
+namespace Safepay
 {
-  public string Client { get; set; }
+  public class Init
+  {
 
-  public string Environment { get; set; }
+    [JsonPropertyName("client")]
+    public string Client { get; set; }
 
-  public double Amount { get; set; }
+    [JsonPropertyName("environment")]
+    public string Environment { get; set; }
 
-  public string Currency { get; set; }
+    [JsonPropertyName("amount")]
+    public double Amount { get; set; }
+
+    [JsonPropertyName("currency")]
+    public string Currency { get; set; }
+  }
 }

@@ -1,23 +1,24 @@
-﻿using System.Net.Http.Headers;
-
-namespace Safepay;
-
-public static class SafepayClient
+﻿namespace Safepay
 {
-  public static HttpClient ApiClient { get; set; }
-
-  public static void InitializeApiClient(bool isDebug)
+  using System.Net.Http;
+  using System.Net.Http.Headers;
+  public static class SafepayClient
   {
-    if (isDebug)
+    public static HttpClient ApiClient { get; set; }
+
+    public static void InitializeApiClient(bool isDebug)
     {
-      ApiClient = new HttpClient(new LoggingHandler(new HttpClientHandler()));
+      if (isDebug)
+      {
+        ApiClient = new HttpClient(new LoggingHandler(new HttpClientHandler()));
+      }
+      else
+      {
+        ApiClient = new HttpClient();
+      }
+
+      ApiClient.DefaultRequestHeaders.Accept.Clear();
+      ApiClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
     }
-    else
-    {
-      ApiClient = new();
-    }
-    
-    ApiClient.DefaultRequestHeaders.Accept.Clear();
-    ApiClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
   }
 }

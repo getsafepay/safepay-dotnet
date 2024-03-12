@@ -1,45 +1,45 @@
-﻿namespace Safepay;
-
-/// <summary> Global configuration class for Safe settings </summary>
-public static class SafepayConfiguration
+﻿namespace Safepay
 {
-  private static string apiKey;
-
-  private static string environment;
-
-  private static string apiBase;
-
-  private static string webhookSecret;
-
-  /// <summary> Gets or sets the API key. </summary>
-  public static string ApiKey
+  /// <summary> Global configuration class for Safe settings </summary>
+  public static class SafepayConfiguration
   {
-    get
+    private static string apiKey;
+
+    private static string environment;
+
+    private static string apiBase;
+
+    private static string webhookSecret;
+
+    /// <summary> Gets or sets the API key. </summary>
+    public static string ApiKey
     {
+      get
+      {
         return apiKey;
-    }
+      }
 
-    set
-    {
+      set
+      {
         apiKey = value;
+      }
     }
-  }
 
-  /// <summary> Gets or sets the Environment. </summary>
-  public static string Environment
-  {
-    get
+    /// <summary> Gets or sets the Environment. </summary>
+    public static string Environment
     {
+      get
+      {
         if (string.IsNullOrEmpty(environment))
         {
           return SafepayEnvironment.Production;
         }
 
         return environment;
-    }
+      }
 
-    set
-    {
+      set
+      {
         string env = value.ToLower();
         switch (env)
         {
@@ -49,14 +49,14 @@ public static class SafepayConfiguration
             environment = env;
             break;
         }
+      }
     }
-  }
 
-  /// <summary> Gets or sets the API Base. </summary>
-  public static string ApiBase
-  {
-    get
+    /// <summary> Gets or sets the API Base. </summary>
+    public static string ApiBase
     {
+      get
+      {
         if (string.IsNullOrEmpty(apiBase))
         {
           switch (Environment)
@@ -76,25 +76,26 @@ public static class SafepayConfiguration
         }
 
         return apiBase;
-    }
+      }
 
-    set
-    {
+      set
+      {
         apiBase = value;
-    }
-  }
-
-  /// <summary> Gets or sets the Webhook Secret. </summary>
-  public static string WebhookSecret
-  {
-    get
-    {
-      return webhookSecret;
+      }
     }
 
-    set
+    /// <summary> Gets or sets the Webhook Secret. </summary>
+    public static string WebhookSecret
     {
-      webhookSecret = value;
+      get
+      {
+        return webhookSecret;
+      }
+
+      set
+      {
+        webhookSecret = value;
+      }
     }
   }
 }

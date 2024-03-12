@@ -1,6 +1,7 @@
-﻿namespace Safepay;
-
-public class Resources
+﻿namespace Safepay
 {
-  public const string Order = "/order";
+  public class Resources
+  {
+    public const string Order = "/order";
+  }
 }
