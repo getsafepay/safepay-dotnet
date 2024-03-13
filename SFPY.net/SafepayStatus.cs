@@ -1,24 +1,17 @@
-﻿using System.Text.Json;
-using System.Text.Json.Serialization;
-
-namespace Safepay
+﻿namespace Safepay
 {
+  using Newtonsoft.Json;
   public class SafepayStatus
   {
-    [JsonPropertyName("message")]
+    [JsonProperty("message")]
     public string Message { get; set; }
 
-    [JsonPropertyName("errors")]
+    [JsonProperty("errors")]
     public string[] Errors { get; set; }
-
-    private static readonly JsonSerializerOptions prettify = new JsonSerializerOptions()
-    {
-      WriteIndented = true
-    };
 
     public override string ToString()
     {
-      return JsonSerializer.Serialize(this, prettify);
+      return JsonConvert.SerializeObject(this, Formatting.Indented);
     }
   }
 }

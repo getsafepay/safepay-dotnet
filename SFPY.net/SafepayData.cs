@@ -1,63 +1,57 @@
 ﻿namespace Safepay
 {
-  using System.Text.Json;
-  using System.Text.Json.Serialization;
+  using Newtonsoft.Json;
 
   public class SafepayData
   {
-    [JsonPropertyName("token")]
+    [JsonProperty("token")]
     public string Token { get; set; }
 
-    [JsonPropertyName("user_id")]
+    [JsonProperty("user_id")]
     public string UserId { get; set; }
 
-    [JsonPropertyName("billing")]
+    [JsonProperty("billing")]
     public string Billing { get; set; }
 
-    [JsonPropertyName("client")]
+    [JsonProperty("client")]
     public string Client { get; set; }
 
-    [JsonPropertyName("amount")]
+    [JsonProperty("amount")]
     public double Amount { get; set; }
 
-    [JsonPropertyName("currrency")]
+    [JsonProperty("currrency")]
     public string Currency { get; set; }
 
-    [JsonPropertyName("default_currency")]
+    [JsonProperty("default_currency")]
     public string DefaultCurrency { get; set; }
 
-    [JsonPropertyName("discount")]
+    [JsonProperty("discount")]
     public double Discount { get; set; }
 
-    [JsonPropertyName("intent")]
+    [JsonProperty("intent")]
     public string Intent { get; set; }
 
-    [JsonPropertyName("convertsion_rate")]
+    [JsonProperty("convertsion_rate")]
     public double ConversionRate { get; set; }
 
-    [JsonPropertyName("environment")]
+    [JsonProperty("environment")]
     public string Environment { get; set; }
 
-    [JsonPropertyName("state")]
+    [JsonProperty("state")]
     public string State { get; set; }
 
-    [JsonPropertyName("created_at")]
+    [JsonProperty("created_at")]
     public string CreatedAt { get; set; }
 
-    [JsonPropertyName("updated_at")]
+    [JsonProperty("updated_at")]
     public string UpdatedAt { get; set; }
 
-    [JsonPropertyName("automatic_currency_conversion")]
+    [JsonProperty("automatic_currency_conversion")]
     public bool AutomaticCurrencyConversion { get; set; }
-
-    private static readonly JsonSerializerOptions prettify = new JsonSerializerOptions()
-    {
-      WriteIndented = true
-    };
 
     public override string ToString()
     {
-      return JsonSerializer.Serialize(this, prettify);
+      return JsonConvert.SerializeObject(this, Formatting.Indented);
     }
   }
 }

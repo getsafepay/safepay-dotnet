@@ -1,10 +1,9 @@
 ﻿namespace Safepay
 {
-  using System;
   using System.Net.Http;
   using System.Text;
-  using System.Text.Json;
   using System.Threading.Tasks;
+  using Newtonsoft.Json;
 
   public class Order
   {
@@ -16,7 +15,7 @@
     /// <param name="currency" The base price currency. Three-letter ISO currency code, in uppercase. </param>
     /// 
     /// <returns></returns>
-    public async Task<SafepayResponse> CreateTracker(double amount, string currency)
+    public static async Task<SafepayResponse> CreateTracker(double amount, string currency)
     {
       string url = $"{SafepayConfiguration.ApiBase}{Resources.Order}{Paths.OrderInit}";
 
@@ -28,11 +27,11 @@
         Currency = currency.ToUpper()
       };
 
-      var content = new StringContent(JsonSerializer.Serialize(body), Encoding.UTF8, "application/json");
+      var content = new StringContent(JsonConvert.SerializeObject(body), Encoding.UTF8, "application/json");
       using (HttpResponseMessage response = await SafepayClient.ApiClient.PostAsync(url, content))
       {
         string Result = await response.Content.ReadAsStringAsync();
-        SafepayResponse sfpyResponse = JsonSerializer.Deserialize<SafepayResponse>(Result);
+        SafepayResponse sfpyResponse = JsonConvert.DeserializeObject<SafepayResponse>(Result);
         return sfpyResponse;
       }
     }

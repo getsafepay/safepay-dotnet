@@ -1,6 +1,6 @@
 # SFPY.net
 
-The official [Safepay][safepay] .NET library, supporting .NET Core 3.1 and .NET Standard 8.0.2+.
+The official [Safepay][safepay] .NET library, supporting .NET Standard 2.0+, .NET Core 2.0+, and .NET Framework 4.6.1+.
 
 ## Usage
 
@@ -62,8 +62,7 @@ An example is shown below:
 SafepayClient.InitializeApiClient(false);
 
 // Create a Tracker with the desired amount and currency
-Order order = new Order();
-var response = await order.CreateTracker(100.50, "PKR");
+var response = await Order.CreateTracker(100.50, "PKR");
 var data = response.Data;
 
 // Generate the Checkout session URL

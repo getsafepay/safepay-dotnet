@@ -29,9 +29,8 @@
     private static async Task<string> CreateTracker(double amount, string currency)
     {
       SafepayClient.InitializeApiClient(false);
-      Order order = new Order();
 
-      var response = await order.CreateTracker(amount, currency);
+      var response = await Order.CreateTracker(amount, currency);
       var data = response.Data;
 
       string checkout = Checkout.CreateSession(data.Token, "AX0000001", "https://google.com", "https://google.com", usingWebhookVerification: true);
