@@ -22,7 +22,7 @@
       var body = new Init
       {
         Client = SafepayConfiguration.ApiKey,
-        Environment = SafepayConfiguration.Environment.ToUpper(),
+        Environment = SafepayConfiguration.Environment.ToLower(),
         Amount = amount,
         Currency = currency.ToUpper()
       };

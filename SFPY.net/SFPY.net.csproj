@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <Description>SFPY.net is a class library for the Safepay API.  (Official Library)</Description>
-    <Version>1.2.0</Version>
+    <Version>1.2.1</Version>
     <LangVersion>8</LangVersion>
     <TargetFrameworks>net5.0;net6.0;net8.0;netcoreapp3.1;netstandard2.0;net461</TargetFrameworks>
     <Authors>Safepay, Hassan Zaidi</Authors>
